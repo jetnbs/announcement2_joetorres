@@ -1,0 +1,165 @@
+<!-- Announcement - Slide Show
+grace for today conference -->
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Grace For Today</title>
+	<link rel="stylesheet" type="text/css" href="css/gft.css">
+	<link rel="stylesheet" type="text/css" href="https://fonts.google.com/specimen/Metamorphous">
+</head>
+
+<body>
+
+<header>
+	<!-- <h1>Grace For Today</h1> -->
+
+<script type="text/javascript">
+
+var message="Welcome to Grace for Today"
+var neonbasecolor="red"
+var neontextcolor="yellow"
+var flashspeed=100  //in milliseconds
+///No need to edit below this line/////
+var n=0
+if (document.all||document.getElementById){
+document.write('<font color="'+neonbasecolor+'">')
+for (m=0;m<message.length;m++)
+document.write('<span id="neonlight'+m+'">'+message.charAt(m)+'</span>')
+document.write('</font>')
+}
+else
+document.write(message)
+function crossref(number){
+var crossobj=document.all? eval("document.all.neonlight"+number) : document.getElementById("neonlight"+number)
+return crossobj
+}
+function neon(){
+//Change all letters to base color
+if (n==0){
+for (m=0;m<message.length;m++)
+//eval("document.all.neonlight"+m).style.color=neonbasecolor
+crossref(m).style.color=neonbasecolor
+}
+//cycle through and change individual letters to neon color
+crossref(n).style.color=neontextcolor
+if (n<message.length-1)
+n++
+else{
+n=0
+clearInterval(flashing)
+setTimeout("beginneon()",1500)
+return
+}
+}
+function beginneon(){
+if (document.all||document.getElementById)
+flashing=setInterval("neon()",flashspeed) 
+}
+ 
+beginneon()
+
+</script>
+ 
+</header>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="doctrine.html">Doctrine</a>  
+  <a href="radio.html">Radio Program</a>
+  <a href="location.html">Location</a>
+  <a href="contact.html">Contact Us</a> 
+  <a href="https://www.youtube.com/watch?v=ROo6c_WX-2Q">YouTube</a>
+</nav>
+
+<div class = "wrapper">
+
+	<div class = "intro">
+		<h2>Mid-Atlantic Fall Grace Bible Conference</h2>
+		<p>GFT is please to announce the dates for the 27th Mid-Atlantic Fall Grace Bible Conference.</p>
+		<p>The dates will be Friday, September 15-16, at the Inn at Reading Pennsylvania.</p>
+
+		<a href="#openModal">Click here for more details.</a>
+
+		<div id="openModal" class="modalDialog">
+			<div>
+				<a href="#close" title="Close" class="close">X</a>
+				<h2>The following are important details:</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat.<br>
+				Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat.<br>
+				Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			</div>
+		</div>
+
+	</div>
+
+	
+
+	<div class = slideshow>
+		<img class = "slide" src ="images/flyer1.jpeg" title="Front brochure">
+		<img class = "slide" src="images/flyer2.jpeg" title="Back brochure">
+		<img class = "slide" src="images/joelmcgarveyphoto.jpeg" title="Pastor Joel McGarvey">
+		<img class = "slide" src="images/dennisphoto.jpg" title="Pastor Dennis Kizonas">
+		<img class = "slide" src="images/drstevensphoto.jpg" title="Elder John Stevens">
+		<img class = "slide" src="images/stamphoto.jpeg">
+
+		<button type="button" class = "back-button" onclick="changeSlide(-1)">Back</button>
+		<button type="button" class = "forward-button" onclick="changeSlide(+1)">Forward</button>
+
+		<script type="text/javascript">
+			
+		var slideIndex = 1;
+		showSlide(slideIndex);
+
+		function changeSlide(n) {
+			showSlide(slideIndex += n)
+		}
+
+		function showSlide(n) {
+			var i;
+			var x=document.getElementsByClassName("slide");
+			if (n > x.length) {slideIndex = 1}
+			if (n < 1) {slideIndex = x.length}
+			for (i = 0; i <= x.length; i++) {
+				x[i].style.display = "none";
+			x[slideIndex - 1].style.display = "block";
+			}
+		}
+
+	</script>
+	</div>
+
+</div>
+
+
+<p></p>
+<p></p>
+<p></p>
+
+<footer>
+	<nav>
+	  	<a href="index.html">Home</a>
+		<a href="doctrine.html">Doctrine</a>  
+	  	<a href="radio.html">Radio Program</a>
+	  	<a href="location.html">Location</a>
+	  	<a href="contact.html">Contact Us</a> 
+	  	<a href="https://www.youtube.com/watch?v=ROo6c_WX-2Q">YouTube</a>
+	  	<a href="index.html">Back to Top</a>
+	</nav>
+</footer>
+
+</body>
+</html>															
